@@ -6,10 +6,19 @@
 // All it does is render <div>Hello Vue</div> at the bottom of the page.
 
 import Vue from 'vue'
+import VueApollo from 'vue-apollo'
 import App from '../../../frontend/app.vue'
+import { apolloClient } from '../../../frontend/apollo-client.js'
+
+Vue.use(VueApollo)
+
+const apolloProvider = new VueApollo({
+  defaultClient: apolloClient,
+})
 
 document.addEventListener('DOMContentLoaded', () => {
   const app = new Vue({
+    apolloProvider,
     render: h => h(App)
   }).$mount()
   document.body.appendChild(app.$el)
