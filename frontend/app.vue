@@ -8,7 +8,7 @@
 export default {
   data: function () {
     return {
-      message: "Hello Vue Testing bitches!"
+      message: "Hello Vue Testing bitches yeah wohoooo!"
     }
   }
 }
