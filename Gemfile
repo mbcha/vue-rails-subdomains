@@ -60,3 +60,4 @@ gem 'awesome_print'
 gem 'foreman'
 gem 'graphql'
 gem 'graphiql-rails', group: :development
+gem 'rack-cors'
