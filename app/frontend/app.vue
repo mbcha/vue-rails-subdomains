@@ -11,8 +11,7 @@ export default {
 </script>
 
 <style scoped>
-p {
-  font-size: 2em;
+#app {
   text-align: center;
 }
 </style>

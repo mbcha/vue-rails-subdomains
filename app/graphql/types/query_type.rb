@@ -8,9 +8,16 @@ module Types
     # They will be entry points for queries on your schema.
 
     field :users, [Types::UserType], null: false
+    field :micro_site, Types::MicroSiteType, null: false do
+      argument :subdomain, String, required: true
+    end
 
     def users
       User.all
+    end
+
+    def micro_site(subdomain:)
+      MicroSite.find_by(subdomain: subdomain)
     end
   end
 end
