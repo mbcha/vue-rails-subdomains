@@ -17,9 +17,13 @@ ActiveRecord::Schema.define(version: 2021_10_17_114318) do
 
   create_table "micro_sites", force: :cascade do |t|
     t.bigint "user_id", null: false
-    t.string "domain"
+    t.string "subdomain"
+    t.string "header_image_url"
+    t.string "title"
+    t.string "description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["subdomain"], name: "index_micro_sites_on_subdomain", unique: true
     t.index ["user_id"], name: "index_micro_sites_on_user_id"
   end
 
