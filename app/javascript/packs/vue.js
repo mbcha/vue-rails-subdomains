@@ -8,6 +8,8 @@
 import Vue from 'vue'
 import VueApollo from 'vue-apollo'
 import App from '../../../frontend/app.vue'
+import index from '../../../frontend/router/index'
+import MicroSiteRoutes from '../../../frontend/router/micro-site'
 import { apolloClient } from '../../../frontend/apollo-client.js'
 
 Vue.use(VueApollo)
@@ -16,14 +18,29 @@ const apolloProvider = new VueApollo({
   defaultClient: apolloClient,
 })
 
+Vue.config.productionTip = false;
+
+const host = window.location.host;
+const parts = host.split('.');
+const domainLength = 3;
+
+const router = () => {
+  let routes;
+  if (parts.length === (domainLength - 1) || parts[0] === 'www') {
+    routes = index;
+  } else {
+    routes = MicroSiteRoutes;
+  }
+  return routes;
+};
+
 document.addEventListener('DOMContentLoaded', () => {
   const app = new Vue({
     apolloProvider,
+    router: router(),
     render: h => h(App)
   }).$mount()
   document.body.appendChild(app.$el)
-
-  console.log(app)
 })
 
 

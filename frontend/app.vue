@@ -1,23 +1,13 @@
 <template>
   <div id="app">
-    <p>{{ message }}</p>
-    <Users />
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-import Users from './components/Users.vue'
-
 export default {
-  components: {
-    Users
-  },
-  data: function () {
-    return {
-      message: "Hello Vue Testing bitches yeah wohoooo yess!"
-    }
-  }
-}
+  name: 'app',
+};
 </script>
 
 <style scoped>

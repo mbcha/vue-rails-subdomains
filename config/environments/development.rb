@@ -75,4 +75,10 @@ Rails.application.configure do
   # config.action_cable.disable_request_forgery_protection = true
 
   config.x.webpacker[:dev_server_host] = 'http://localhost:8080'
+
+  config.hosts << "domains.fml"
+  config.hosts << "belu.domains.fml"
+  config.hosts << "cande.domains.fml"
+  config.hosts << "mate.domains.fml"
+  config.hosts << "fran.domains.fml"
 end
