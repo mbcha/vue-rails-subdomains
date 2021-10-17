@@ -7,10 +7,10 @@
 
 import Vue from 'vue'
 import VueApollo from 'vue-apollo'
-import App from '../../../frontend/app.vue'
-import index from '../../../frontend/router/index'
-import MicroSiteRoutes from '../../../frontend/router/micro-site'
-import { apolloClient } from '../../../frontend/apollo-client.js'
+import App from '../../frontend/app.vue'
+import index from '../../frontend/router/index'
+import MicroSiteRoutes from '../../frontend/router/micro-site'
+import { apolloClient } from '../../frontend/apollo-client.js'
 
 Vue.use(VueApollo)
 
